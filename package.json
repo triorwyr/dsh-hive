@@ -1,0 +1,73 @@
+{
+  "name": "dsh-hive",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hive: teams of DeepSeek Harness bots that work together on a board. Each bot has its own avatar, persona, model, skills, apps, scheduled tasks and memory; a dispatcher hands work out through each team's lead; every request is a card, every task a group chat with a file panel. Ships a security layer: data protection, approvals, an audit log, snapshots with restore, safe mode, a single-writer lock and a controlled data-repair tool.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/*.mjs",
+    "lib/channels/*.mjs",
+    "logos/*.png",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-commands",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6 <0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadaliao/dsh-bots.git"
+  },
+  "homepage": "https://github.com/kadaliao/dsh-bots#readme",
+  "bugs": "https://github.com/kadaliao/dsh-bots/issues",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "bots",
+    "agents",
+    "multi-agent",
+    "persona",
+    "schedule",
+    "mcp",
+    "computer-use",
+    "memory",
+    "usage",
+    "kanban",
+    "projects",
+    "github",
+    "github-enterprise"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\""
+  }
+}

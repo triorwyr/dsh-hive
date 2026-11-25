@@ -1,0 +1,7 @@
+- insert:
+    - id: bots
+      name: 'dsh-hive'
+      config:
+        enabled: true
+        # Directory bot conversations run in; empty means ~/.dsh/bots/workspace.
+        workdir: ''
